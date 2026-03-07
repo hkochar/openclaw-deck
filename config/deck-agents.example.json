@@ -1,0 +1,71 @@
+{
+  "agents": [
+    {
+      "id": "main",
+      "key": "alpha",
+      "name": "Alpha",
+      "role": "Coordinator",
+      "emoji": "🌐",
+      "discordChannelId": "YOUR_DISCORD_CHANNEL_ID",
+      "agentDir": ""
+    },
+    {
+      "id": "bravo",
+      "key": "bravo",
+      "name": "Bravo",
+      "role": "Dev / Infrastructure",
+      "emoji": "🔨",
+      "discordChannelId": "YOUR_DISCORD_CHANNEL_ID",
+      "agentDir": "agents/dev"
+    },
+    {
+      "id": "charlie",
+      "key": "charlie",
+      "name": "Charlie",
+      "role": "Research & Intelligence",
+      "emoji": "🔍",
+      "discordChannelId": "YOUR_DISCORD_CHANNEL_ID",
+      "agentDir": "agents/research"
+    },
+    {
+      "id": "delta",
+      "key": "delta",
+      "name": "Delta",
+      "role": "Creative",
+      "emoji": "🎨",
+      "discordChannelId": "YOUR_DISCORD_CHANNEL_ID",
+      "agentDir": "agents/creative"
+    },
+    {
+      "id": "echo",
+      "key": "echo",
+      "name": "Echo",
+      "role": "QA / Monitoring",
+      "emoji": "🛡️",
+      "discordChannelId": "YOUR_DISCORD_CHANNEL_ID",
+      "agentDir": "agents/qa"
+    }
+  ],
+  "systemChannels": {
+    "systemStatus": "YOUR_DISCORD_CHANNEL_ID",
+    "agentMonitoring": "YOUR_DISCORD_CHANNEL_ID"
+  },
+  "pluginChannels": {
+    "model-drift": "YOUR_DISCORD_CHANNEL_ID"
+  },
+  "logChannels": {
+    "deck-qa": "YOUR_DISCORD_CHANNEL_ID",
+    "memory": "YOUR_DISCORD_CHANNEL_ID",
+    "tasks": "YOUR_DISCORD_CHANNEL_ID"
+  },
+  "opsBotCommands": {
+    "status": true,
+    "doctor": true,
+    "openclaw-gw": true,
+    "nextjs": true,
+    "ops-bot": true,
+    "restart-all": true,
+    "revert-config": true,
+    "help": true
+  }
+}
