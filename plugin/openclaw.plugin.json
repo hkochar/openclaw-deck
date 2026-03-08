@@ -1,0 +1,9 @@
+{
+  "id": "openclaw-deck-sync",
+  "kind": "integration",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

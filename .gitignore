@@ -1,0 +1,32 @@
+node_modules
+.next
+out
+.DS_Store
+.env.local
+.env*.local
+coverage
+data/*.db
+!data/demo-usage.db
+data/*.db-journal
+data/*.db-shm
+data/*.db-wal
+data/*.db.backup-*
+
+# Real config files (created from .example.json on first run)
+config/deck-config.json
+config/deck-agents.json
+sentinel/deck-sentinel.json
+sentinel/test_config.json
+test-results/
+__pycache__/
+*.pyc
+
+# Build artifacts with local paths
+tsconfig.tsbuildinfo
+
+# Sentinel monitoring logs (contain local machine paths)
+sentinel/sentinel_runs.jsonl
+
+# Internal research and planning (not for public repo)
+research/
+open source/

@@ -1,0 +1,73 @@
+{
+  "_comment": "Copy this to deck-sentinel.json to customize. Paths support ~ for home directory.",
+
+  "loop_interval_seconds": 300,
+  "sentinel_runs_file": "sentinel_runs.jsonl",
+
+  "checks": {
+    "cron_health": {
+      "enabled": true
+    },
+    "working_md": {
+      "enabled": false
+    },
+    "security_audit": {
+      "enabled": false
+    },
+    "ghost_crons": {
+      "enabled": true
+    },
+    "gateway_health": {
+      "enabled": true
+    },
+    "port_conflicts": {
+      "enabled": true,
+      "auto_kill": false
+    },
+    "dashboard_health": {
+      "enabled": true,
+      "url": "http://localhost:3000"
+    },
+    "launchd_services": {
+      "enabled": true,
+      "auto_restart": true
+    },
+    "system_resources": {
+      "enabled": true,
+      "memory_percent": 80,
+      "disk_percent": 85,
+      "cpu_load_multiplier": 2.0,
+      "disk_path": "/"
+    },
+    "plugin_health": {
+      "enabled": true,
+      "stale_poll_minutes": 10,
+      "stale_events_minutes": 60,
+      "active_hours_start": 8,
+      "active_hours_end": 23
+    },
+    "context_pressure": {
+      "enabled": true,
+      "context_threshold_percent": 80,
+      "active_hours_start": 8,
+      "active_hours_end": 23
+    }
+  },
+
+  "cron_status_file": "~/.openclaw/state/cron_status.json",
+  "cron_consecutive_error_threshold": 3,
+
+  "workspace_path": "~/.openclaw/workspace",
+  "working_md_max_age_hours": 60,
+  "memory_files": [
+    "WORKING.md"
+  ],
+
+  "security_scan_paths": [
+    "~/.openclaw/workspace"
+  ],
+
+  "gateway_url": "http://127.0.0.1:5310",
+  "gateway_health_timeout_seconds": 5,
+  "openclaw_config_path": "~/.openclaw/openclaw.json"
+}

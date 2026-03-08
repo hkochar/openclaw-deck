@@ -1,0 +1,59 @@
+{
+  "name": "openclaw-deck",
+  "version": "0.1.0",
+  "description": "Deck — AI Agent Orchestration Dashboard for OpenClaw",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openclaw/openclaw-deck.git"
+  },
+  "scripts": {
+    "setup": "node scripts/bootstrap-config.mjs",
+    "predev": "node scripts/bootstrap-config.mjs",
+    "prebuild": "node scripts/bootstrap-config.mjs",
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test __tests__/*.test.ts",
+    "test:cron": "tsx --test __tests__/cron-parser.test.ts",
+    "test:config": "tsx --test __tests__/config-validation.test.ts",
+    "test:git": "tsx --test __tests__/git-utils.test.ts",
+    "test:models": "tsx --test __tests__/model-utils.test.ts",
+    "test:security": "tsx --test __tests__/security.test.ts",
+    "test:plist": "tsx --test __tests__/plist-parser.test.ts",
+    "test:smoke": "tsx --test __tests__/smoke/fresh-install.test.ts",
+    "test:smoke:live": "tsx --test __tests__/smoke/services.test.ts",
+    "test:integration": "tsx --test __tests__/integration/*.test.ts",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ui": "npx playwright test --ui",
+    "backfill": "tsx scripts/backfill-all.ts",
+    "backfill:dry": "tsx scripts/backfill-all.ts --dry-run",
+    "seed:demo": "tsx scripts/seed-demo-db.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^20.16.5",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.35",
+    "tsx": "^4.21.0",
+    "typescript": "^5.6.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild",
+      "unrs-resolver"
+    ]
+  }
+}

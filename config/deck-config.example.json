@@ -1,0 +1,51 @@
+{
+  "serviceUrls": {
+    "gateway": "http://127.0.0.1:18789",
+    "deckDashboard": "http://localhost:3000"
+  },
+  "dashboard": {
+    "siteUrl": "http://localhost:3000"
+  },
+  "budgets": {
+    "global": { "daily": 100, "weekly": 500, "monthly": 2000, "dailyRequests": 500, "weeklyRequests": 3000 },
+    "agents": {},
+    "alertThresholds": [50, 80, 100],
+    "alertChannel": "systemStatus"
+  },
+  "modelPricing": {
+    "opus":     { "input": 15,    "output": 75,    "cacheRead": 1.5,   "cacheWrite": 18.75 },
+    "sonnet":   { "input": 3,     "output": 15,    "cacheRead": 0.3,   "cacheWrite": 3.75 },
+    "haiku":    { "input": 0.25,  "output": 1.25,  "cacheRead": 0.025, "cacheWrite": 0.3125 },
+    "gpt-4o":   { "input": 2.5,   "output": 10,    "cacheRead": 1.25,  "cacheWrite": 0 },
+    "deepseek": { "input": 0.27,  "output": 1.10,  "cacheRead": 0.07,  "cacheWrite": 0 }
+  },
+  "providerKeys": {
+    "openrouter": { "managementKey": "" },
+    "anthropic": { "adminKey": "" },
+    "openai": { "adminKey": "" }
+  },
+  "sessionGuardrails": {
+    "enabled": true,
+    "action": "alert",
+    "maxSessionDuration": 60,
+    "maxToolCalls": 200,
+    "contextThreshold": 85,
+    "stepCostThreshold": 1
+  },
+  "throttleChain": ["opus", "sonnet", "haiku"],
+  "providerLimits": {
+    "anthropic": {
+      "windows": [
+        { "id": "5h-rolling", "duration": 18000, "rolling": true, "shared": true, "weights": { "opus": 1.0, "sonnet": 0.5, "haiku": 0.25 }, "limit": 45 },
+        { "id": "weekly", "duration": 604800, "rolling": false, "shared": true, "weights": { "opus": 1.0, "sonnet": 0.5, "haiku": 0.25 }, "limit": 225 }
+      ]
+    },
+    "openai": {
+      "windows": [
+        { "id": "gpt5-weekly", "duration": 604800, "rolling": false, "shared": false, "model": "gpt-5", "limit": 3000 },
+        { "id": "o3-weekly", "duration": 604800, "rolling": false, "shared": false, "model": "o3", "limit": 100 },
+        { "id": "o4mini-daily", "duration": 86400, "rolling": false, "shared": false, "model": "o4-mini", "limit": 300 }
+      ]
+    }
+  }
+}

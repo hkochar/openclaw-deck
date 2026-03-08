@@ -1,0 +1,10 @@
+# Security-sensitive paths require review
+middleware.ts                @hkochar
+app/api/_lib/security.ts     @hkochar
+app/api/_lib/git-utils.ts    @hkochar
+app/api/auth/               @hkochar
+app/api/service-control/    @hkochar
+app/api/gateway-control/    @hkochar
+plugin/lib/http-routes.ts   @hkochar
+plugin/budget.ts            @hkochar
+.github/workflows/          @hkochar
